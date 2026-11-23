@@ -99,7 +99,7 @@ section.band { background: var(--surface); border-top: 2px solid var(--ink); bor
 .checks td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
 .checks td:first-child { font-weight: 700; white-space: nowrap; }
 .checks td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.checks tr.group td { border-bottom: none; padding-top: 26px; font-family: "Bricolage Grotesque", sans-serif; font-size: 19px; }
+.checks tr.group td { text-align: left; border-bottom: none; padding-top: 26px; font-family: "Bricolage Grotesque", sans-serif; font-size: 19px; }
 
 /* explainers */
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
