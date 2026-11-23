@@ -3,23 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rawview – AI Visibility & Citability Checker for SEO</title>
-<meta name="description" content="Chrome extension that scores how easy your page is for ChatGPT, Claude and Perplexity to read and quote. See what disappears without JavaScript and what to fix first.">
+<title>AI Visibility Checker for Chrome – Free GEO Score | Rawview</title>
+<meta name="description" content="Free AI visibility checker for Chrome. See what ChatGPT, Claude and Perplexity crawlers can read on your page, get a GEO score from 0 to 100 and a list of fixes.">
+<link rel="canonical" href="https://rawviewapp.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rawview – AI Visibility Checker for Chrome">
+<meta property="og:description" content="See your page the way AI crawlers read it. Free GEO score, AI crawler check and llms.txt check.">
+<meta property="og:url" content="https://rawviewapp.github.io/">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Rawview – AI Visibility & Citability Checker",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "description": "Chrome extension that checks how AI crawlers read a web page and scores how easy it is for AI search to quote.",
+      "url": "https://rawviewapp.github.io/",
+      "offers": [
+        {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Pro", "price": "9", "priceCurrency": "USD"}
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "Rawview",
+      "url": "https://rawviewapp.github.io/",
+      "email": "citecheck.app@gmail.com"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is an AI visibility checker?", "acceptedAnswer": {"@type": "Answer", "text": "An AI visibility checker shows whether AI search tools like ChatGPT, Claude and Perplexity can read your page and how easy it is for them to quote. Rawview does this inside Chrome for any page you open."}},
+        {"@type": "Question", "name": "What is a GEO score?", "acceptedAnswer": {"@type": "Answer", "text": "GEO stands for generative engine optimization. Rawview's GEO score runs 17 checks on structure, facts, trust signals and crawler access, and adds them up to a number from 0 to 100."}},
+        {"@type": "Question", "name": "Does a high GEO score guarantee citations in ChatGPT?", "acceptedAnswer": {"@type": "Answer", "text": "No. AI companies do not publish how they choose sources. The score measures how easy a page is to read and quote, which is what you can control."}},
+        {"@type": "Question", "name": "Does Rawview send my pages anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. All analysis runs in your browser. The only outside request is a check of your Pro purchase."}},
+        {"@type": "Question", "name": "Can Rawview see if Cloudflare blocks AI bots?", "acceptedAnswer": {"@type": "Answer", "text": "Not reliably. Requests come from your browser and IP address, so firewall rules that target bot IP ranges do not apply to them."}},
+        {"@type": "Question", "name": "How much does Rawview Pro cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pro is a one-time payment of 9 USD with a 14-day refund window. There is no subscription."}}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><span></span>Rawview</a>
+    <a class="brand" href="./">raw<i>view</i></a>
     <nav class="links">
-      <a href="#how">How it works</a>
+      <a href="#checks">What it checks</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-small" href="CHROME_WEB_STORE_LINK">Add to Chrome</a>
+      <a class="btn" href="CHROME_WEB_STORE_LINK">Add to Chrome</a>
     </nav>
   </div>
 </header>
@@ -27,102 +69,117 @@
 <main>
 <div class="wrap hero">
   <div>
-    <h1>See your page the way AI crawlers do</h1>
-    <p class="lead">Rawview is a Chrome extension that rates how easy a page is for ChatGPT, Claude and Perplexity to read and quote, and shows what to fix first.</p>
+    <h1>Free AI visibility checker for any page</h1>
+    <p class="lead">Rawview shows what ChatGPT, Claude and Perplexity crawlers can actually read on your page, gives it a <span class="mark">GEO score from 0 to 100</span>, and tells you what to fix first.</p>
     <div class="actions">
       <a class="btn" href="CHROME_WEB_STORE_LINK">Check my page for free</a>
-      <a class="btn btn-ghost" href="#pricing">See Pro features</a>
+      <a class="btn btn-line" href="#checks">See the 17 checks</a>
     </div>
-    <ul class="trust">
-      <li>Free forever, no sign-up</li>
-      <li>Runs in your browser, pages never leave it</li>
-      <li>Pro: 9 USD once, no subscription</li>
-    </ul>
+    <p class="small">Chrome extension. Works on any site, no account needed.</p>
   </div>
 
-  <div class="demo" aria-label="Example of a page checked by the extension">
-    <div class="demo-bar">
-      <span>example.com/best-coffee-grinders</span>
-      <span class="demo-score">58<small> / 100</small></span>
+  <figure class="split" aria-label="The same page as a person sees it and as an AI crawler reads it" style="margin:0">
+    <div class="split-head"><span>What you see</span><span>What GPTBot reads</span></div>
+    <div class="split-body">
+      <div class="pane">
+        <div class="row got"><span class="h">Best espresso grinders 2026</span></div>
+        <div class="row got">A flat-burr grinder under 400 USD gives the most even espresso grind at home.</div>
+        <div class="row got">Comparison table: 8 grinders, price, burr size</div>
+        <div class="row got">Reviews and ratings</div>
+      </div>
+      <div class="pane">
+        <div class="row got"><span class="h">Best espresso grinders 2026</span></div>
+        <div class="row got">A flat-burr grinder under 400 USD gives the most even espresso grind at home.</div>
+        <div class="row gone"><b>Not in raw HTML</b>Table loads with JavaScript</div>
+        <div class="row gone"><b>Not in raw HTML</b>Reviews load with JavaScript</div>
+      </div>
     </div>
-    <div class="blk">
-      <b>Which coffee grinder is best for espresso?</b><br>
-      For most home baristas, a flat-burr grinder under 400 USD gives the most consistent espresso grind.
-      <span class="tag">Easy to quote: question heading with a short direct answer</span>
-    </div>
-    <div class="blk bad">
-      Our passion for coffee started many years ago when we first discovered that great taste comes from…
-      <span class="tag">Weak: long intro with no facts in the first 60 words</span>
-    </div>
-    <div class="blk ghost">
-      Comparison table: 8 grinders, prices, burr type
-      <span class="tag">Missing for bots: this table loads only after JavaScript</span>
-    </div>
-  </div>
+    <div class="score"><strong>58</strong><span>GEO score. 41% of the content is invisible to AI crawlers.</span></div>
+  </figure>
 </div>
 
-<section id="how">
+<section class="band" id="checks">
   <div class="wrap">
-    <h2>What the extension checks</h2>
-    <div class="cols">
-      <div>
-        <h3>Content without JavaScript</h3>
-        <p>Most AI crawlers read the raw HTML and skip scripts. The extension compares the raw page with what you see and shows the share of text bots miss.</p>
-      </div>
-      <div>
-        <h3>Structure that gets quoted</h3>
-        <p>Question headings, short answers under them, lists, tables, numbers and sources. 17 checks add up to one score from 0 to 100.</p>
-      </div>
-      <div>
-        <h3>Access for AI bots</h3>
-        <p>Which AI crawlers your robots.txt allows or blocks, whether you have llms.txt, and any noindex or noai tags.</p>
-      </div>
-    </div>
+    <h2>What does Rawview check?</h2>
+    <p class="intro">Rawview runs 17 checks on the raw HTML, the way most AI crawlers read a page, and weights them into one GEO score. These are the same checks an SEO would do by hand for AI search optimization.</p>
+    <table class="checks">
+      <thead><tr><th>Check</th><th>What it looks for</th><th>Points</th></tr></thead>
+      <tbody>
+        <tr class="group"><td colspan="3">Crawler access</td></tr>
+        <tr><td>Content without JavaScript</td><td>Share of your text that exists in the raw HTML, before scripts run</td><td>12</td></tr>
+        <tr><td>AI crawlers in robots.txt</td><td>Whether GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended and others are allowed</td><td>5</td></tr>
+        <tr><td>No blocking tags</td><td>noindex, noai and X-Robots-Tag headers</td><td>3</td></tr>
+        <tr><td>Short paragraphs</td><td>Average paragraph under 80 words, easy for a parser to split</td><td>5</td></tr>
+        <tr class="group"><td colspan="3">Structure that gets quoted</td></tr>
+        <tr><td>Question headings</td><td>H2 and H3 phrased the way people ask AI assistants</td><td>8</td></tr>
+        <tr><td>Direct answers</td><td>A short answer, under 60 words, right below each heading</td><td>10</td></tr>
+        <tr><td>FAQ block</td><td>Three or more questions with answers, or FAQPage schema</td><td>4</td></tr>
+        <tr><td>One H1, clean hierarchy</td><td>No skipped heading levels</td><td>8</td></tr>
+        <tr class="group"><td colspan="3">Facts</td></tr>
+        <tr><td>Numbers and data</td><td>Prices, percentages, dates and counts in the text</td><td>8</td></tr>
+        <tr><td>Sources</td><td>Links to studies, docs and other outside sources</td><td>8</td></tr>
+        <tr><td>Tables and lists</td><td>Comparison tables and lists in the main content</td><td>9</td></tr>
+        <tr class="group"><td colspan="3">Trust signals</td></tr>
+        <tr><td>Author</td><td>A named author on the page and in schema</td><td>6</td></tr>
+        <tr><td>Updated date</td><td>A visible date and dateModified in schema</td><td>6</td></tr>
+        <tr><td>Schema markup</td><td>Article, Product, FAQPage, HowTo or Organization</td><td>5</td></tr>
+        <tr><td>Entity links</td><td>Organization or Person with sameAs profiles</td><td>3</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <section>
-  <div class="wrap narrow">
-    <h2>How to use it</h2>
-    <ol class="steps">
-      <li>Install the extension from the Chrome Web Store.</li>
-      <li>Open any page and click the extension icon. The check takes about 3 seconds.</li>
-      <li>Read your score and the top problems, then fix them and check again.</li>
-    </ol>
-    <p>Everything runs in your browser. Page content is never sent to our servers or to any AI model.</p>
-    <div class="actions"><a class="btn" href="CHROME_WEB_STORE_LINK">Get my score in 3 seconds</a></div>
+  <div class="wrap two">
+    <div>
+      <h2>How do AI crawlers see your page?</h2>
+      <p>Most AI crawlers download your HTML and do not run JavaScript. Anything your site builds in the browser, like tabs, accordions, review widgets and tables loaded from an API, may never reach ChatGPT or Perplexity.</p>
+      <p>Rawview fetches the raw HTML of the page you are on, compares it with what Chrome rendered, and <span class="mark">marks every block that AI crawlers miss</span>.</p>
+    </div>
+    <div>
+      <h2>How do I check my AI visibility?</h2>
+      <ol class="steps">
+        <li>Add Rawview to Chrome.</li>
+        <li>Open the page you want to check and click the Rawview icon.</li>
+        <li>Read your GEO score and the top problems. The check takes about 3 seconds.</li>
+        <li>Fix the problems and run the check again to see the new score.</li>
+      </ol>
+      <p class="small">Pages are analyzed in your browser and never sent to a server or an AI model.</p>
+    </div>
   </div>
 </section>
 
-<section id="pricing">
+<section class="band" id="pricing">
   <div class="wrap">
-    <h2>Pricing</h2>
+    <h2>How much does Rawview cost?</h2>
+    <p class="intro">The free version covers a full check of any page. Pro adds the tools you need for client work and fixes. One payment, no subscription.</p>
     <div class="plans">
       <div class="plan">
         <h3>Free</h3>
         <div class="price">0 USD</div>
         <ul>
-          <li>Score for the current page</li>
-          <li>Top 3 problems</li>
+          <li>GEO score for any page</li>
+          <li>Top 3 problems to fix</li>
           <li>Raw HTML vs rendered page</li>
-          <li>AI bots in robots.txt and llms.txt check</li>
+          <li>AI crawler check for robots.txt</li>
+          <li>llms.txt check</li>
           <li>Unlimited checks</li>
         </ul>
-        <a class="btn btn-ghost btn-full" href="CHROME_WEB_STORE_LINK">Start free</a>
+        <a class="btn btn-line" href="CHROME_WEB_STORE_LINK">Start free</a>
       </div>
       <div class="plan pro">
         <h3>Pro</h3>
-        <div class="price">9 USD <small>one-time</small></div>
+        <div class="price">9 USD <small>once</small></div>
         <ul>
           <li>Everything in Free</li>
-          <li>Full checklist with fix examples</li>
-          <li>Highlighting of strong and weak blocks on the page</li>
-          <li>Compare your page with a competitor</li>
-          <li>PDF and CSV reports</li>
+          <li>All 17 checks with fix examples</li>
+          <li>Highlights of strong and weak blocks on the page</li>
+          <li>Compare your page with a competitor's</li>
+          <li>PDF and CSV reports for clients</li>
           <li>History of your last 50 checks</li>
         </ul>
-        <a class="btn btn-full" href="CHECKOUT_LINK">Unlock Pro for 9 USD</a>
-        <span class="cta-note">Pay once, use forever. 14-day money-back guarantee.</span>
+        <a class="btn" href="CHECKOUT_LINK">Get Pro for 9 USD</a>
+        <p class="small">14-day refund, no questions asked.</p>
       </div>
     </div>
   </div>
@@ -130,37 +187,40 @@
 
 <section id="faq">
   <div class="wrap narrow">
-    <h2>Questions</h2>
+    <h2>Questions about AI visibility</h2>
     <details>
-      <summary>Does a high score guarantee my page will appear in ChatGPT answers?</summary>
-      <p>No. Nobody outside the AI companies knows exactly how sources are chosen. The score measures how easy your page is to read and quote, based on patterns that help in practice.</p>
+      <summary>What is an AI visibility checker?</summary>
+      <p>An AI visibility checker shows whether AI search tools like ChatGPT, Claude and Perplexity can read your page and how easy it is for them to quote. Rawview does this inside Chrome for any page you open.</p>
     </details>
     <details>
-      <summary>Do you send my pages anywhere?</summary>
-      <p>No. The extension downloads and analyzes pages inside your browser. The only external request is a check of your Pro purchase status.</p>
+      <summary>What is a GEO score?</summary>
+      <p>GEO stands for generative engine optimization. Rawview's GEO score runs 17 checks on structure, facts, trust signals and crawler access, and adds them up to a number from 0 to 100.</p>
     </details>
     <details>
-      <summary>Can it see if Cloudflare blocks AI bots on my site?</summary>
-      <p>Not reliably. Requests come from your own browser and IP address, so firewall rules that target bots by IP do not apply to them.</p>
+      <summary>Does a high GEO score guarantee citations in ChatGPT?</summary>
+      <p>No. AI companies do not publish how they choose sources. The score measures how easy a page is to read and quote, which is what you can control.</p>
     </details>
     <details>
-      <summary>How do I activate Pro?</summary>
-      <p>Buy Pro, then open the extension and enter the email you used at checkout. Pro unlocks on all your Chrome browsers signed in with that email.</p>
+      <summary>Does Rawview send my pages anywhere?</summary>
+      <p>No. All analysis runs in your browser. The only outside request is a check of your Pro purchase.</p>
     </details>
     <details>
-      <summary>Can I get a refund?</summary>
-      <p>Yes, within 14 days of purchase. See the <a href="refund.html">refund policy</a>.</p>
+      <summary>Can Rawview see if Cloudflare blocks AI bots?</summary>
+      <p>Not reliably. Requests come from your browser and IP address, so firewall rules that target bot IP ranges do not apply to them.</p>
+    </details>
+    <details>
+      <summary>How much does Rawview Pro cost?</summary>
+      <p>Pro is a one-time payment of 9 USD with a 14-day refund window. There is no subscription. See the <a href="refund.html">refund policy</a>.</p>
     </details>
   </div>
 </section>
 
-<section class="final">
+<section class="band final">
   <div class="wrap narrow">
-    <h2>How does your page score?</h2>
-    <p class="lead">Install the free version and check your most important page in 3 seconds.</p>
+    <h2>What does GPTBot see on your homepage?</h2>
+    <p>Install Rawview and find out in 3 seconds. The free check shows your GEO score and the first three things to fix.</p>
     <div class="actions">
       <a class="btn" href="CHROME_WEB_STORE_LINK">Check my page for free</a>
-      <a class="btn btn-ghost" href="CHECKOUT_LINK">Unlock Pro for 9 USD</a>
     </div>
   </div>
 </section>
@@ -174,8 +234,9 @@
       <a href="terms.html">Terms</a>
       <a href="refund.html">Refund policy</a>
       <a href="privacy.html">Privacy</a>
+      <a href="llms.txt">llms.txt</a>
     </div>
-    <div>Contact: <a href="mailto:citecheck.app@gmail.com">citecheck.app@gmail.com</a></div>
+    <div>Rawview by Dariia Zhurakivska, <a href="mailto:citecheck.app@gmail.com">citecheck.app@gmail.com</a></div>
   </div>
 </footer>
 
