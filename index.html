@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rawview – AI Visibility & Citability Checker for SEO</title>
+<meta name="description" content="Chrome extension that scores how easy your page is for ChatGPT, Claude and Perplexity to read and quote. See what disappears without JavaScript and what to fix first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><span></span>Rawview</a>
+    <nav class="links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-small" href="CHROME_WEB_STORE_LINK">Add to Chrome</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1>See your page the way AI crawlers do</h1>
+    <p class="lead">Rawview is a Chrome extension that rates how easy a page is for ChatGPT, Claude and Perplexity to read and quote, and shows what to fix first.</p>
+    <div class="actions">
+      <a class="btn" href="CHROME_WEB_STORE_LINK">Check my page for free</a>
+      <a class="btn btn-ghost" href="#pricing">See Pro features</a>
+    </div>
+    <ul class="trust">
+      <li>Free forever, no sign-up</li>
+      <li>Runs in your browser, pages never leave it</li>
+      <li>Pro: 9 USD once, no subscription</li>
+    </ul>
+  </div>
+
+  <div class="demo" aria-label="Example of a page checked by the extension">
+    <div class="demo-bar">
+      <span>example.com/best-coffee-grinders</span>
+      <span class="demo-score">58<small> / 100</small></span>
+    </div>
+    <div class="blk">
+      <b>Which coffee grinder is best for espresso?</b><br>
+      For most home baristas, a flat-burr grinder under 400 USD gives the most consistent espresso grind.
+      <span class="tag">Easy to quote: question heading with a short direct answer</span>
+    </div>
+    <div class="blk bad">
+      Our passion for coffee started many years ago when we first discovered that great taste comes from…
+      <span class="tag">Weak: long intro with no facts in the first 60 words</span>
+    </div>
+    <div class="blk ghost">
+      Comparison table: 8 grinders, prices, burr type
+      <span class="tag">Missing for bots: this table loads only after JavaScript</span>
+    </div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>What the extension checks</h2>
+    <div class="cols">
+      <div>
+        <h3>Content without JavaScript</h3>
+        <p>Most AI crawlers read the raw HTML and skip scripts. The extension compares the raw page with what you see and shows the share of text bots miss.</p>
+      </div>
+      <div>
+        <h3>Structure that gets quoted</h3>
+        <p>Question headings, short answers under them, lists, tables, numbers and sources. 17 checks add up to one score from 0 to 100.</p>
+      </div>
+      <div>
+        <h3>Access for AI bots</h3>
+        <p>Which AI crawlers your robots.txt allows or blocks, whether you have llms.txt, and any noindex or noai tags.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <h2>How to use it</h2>
+    <ol class="steps">
+      <li>Install the extension from the Chrome Web Store.</li>
+      <li>Open any page and click the extension icon. The check takes about 3 seconds.</li>
+      <li>Read your score and the top problems, then fix them and check again.</li>
+    </ol>
+    <p>Everything runs in your browser. Page content is never sent to our servers or to any AI model.</p>
+    <div class="actions"><a class="btn" href="CHROME_WEB_STORE_LINK">Get my score in 3 seconds</a></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <div class="price">0 USD</div>
+        <ul>
+          <li>Score for the current page</li>
+          <li>Top 3 problems</li>
+          <li>Raw HTML vs rendered page</li>
+          <li>AI bots in robots.txt and llms.txt check</li>
+          <li>Unlimited checks</li>
+        </ul>
+        <a class="btn btn-ghost btn-full" href="CHROME_WEB_STORE_LINK">Start free</a>
+      </div>
+      <div class="plan pro">
+        <h3>Pro</h3>
+        <div class="price">9 USD <small>one-time</small></div>
+        <ul>
+          <li>Everything in Free</li>
+          <li>Full checklist with fix examples</li>
+          <li>Highlighting of strong and weak blocks on the page</li>
+          <li>Compare your page with a competitor</li>
+          <li>PDF and CSV reports</li>
+          <li>History of your last 50 checks</li>
+        </ul>
+        <a class="btn btn-full" href="CHECKOUT_LINK">Unlock Pro for 9 USD</a>
+        <span class="cta-note">Pay once, use forever. 14-day money-back guarantee.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap narrow">
+    <h2>Questions</h2>
+    <details>
+      <summary>Does a high score guarantee my page will appear in ChatGPT answers?</summary>
+      <p>No. Nobody outside the AI companies knows exactly how sources are chosen. The score measures how easy your page is to read and quote, based on patterns that help in practice.</p>
+    </details>
+    <details>
+      <summary>Do you send my pages anywhere?</summary>
+      <p>No. The extension downloads and analyzes pages inside your browser. The only external request is a check of your Pro purchase status.</p>
+    </details>
+    <details>
+      <summary>Can it see if Cloudflare blocks AI bots on my site?</summary>
+      <p>Not reliably. Requests come from your own browser and IP address, so firewall rules that target bots by IP do not apply to them.</p>
+    </details>
+    <details>
+      <summary>How do I activate Pro?</summary>
+      <p>Buy Pro, then open the extension and enter the email you used at checkout. Pro unlocks on all your Chrome browsers signed in with that email.</p>
+    </details>
+    <details>
+      <summary>Can I get a refund?</summary>
+      <p>Yes, within 14 days of purchase. See the <a href="refund.html">refund policy</a>.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap narrow">
+    <h2>How does your page score?</h2>
+    <p class="lead">Install the free version and check your most important page in 3 seconds.</p>
+    <div class="actions">
+      <a class="btn" href="CHROME_WEB_STORE_LINK">Check my page for free</a>
+      <a class="btn btn-ghost" href="CHECKOUT_LINK">Unlock Pro for 9 USD</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<a class="sticky-cta" href="CHROME_WEB_STORE_LINK">Check my page for free</a>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refund policy</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div>Contact: <a href="mailto:citecheck.app@gmail.com">citecheck.app@gmail.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
