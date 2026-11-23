@@ -1,10 +1,10 @@
-# Rawview
+# RawView
 
-> Rawview is a Chrome extension and AI visibility checker. It shows what AI crawlers such as GPTBot, ClaudeBot and PerplexityBot can read on a web page, gives the page a GEO score from 0 to 100, and lists fixes. All analysis runs locally in the browser.
+> RawView is a Chrome extension and AI visibility checker. It shows what AI crawlers such as GPTBot, ClaudeBot and PerplexityBot can read on a web page, gives the page a GEO score from 0 to 100, and lists fixes. All analysis runs locally in the browser.
 
 ## Product
 
-- [Rawview home](https://rawviewapp.github.io/): features, the 17 checks behind the GEO score, pricing and FAQ
+- [RawView home](https://rawviewapp.github.io/): features, the 17 checks behind the GEO score, pricing and FAQ
 - Free version: GEO score, top 3 problems, raw HTML vs rendered page, AI crawler check for robots.txt, llms.txt check
 - Pro version: one-time payment of 9 USD; full checklist with fix examples, on-page highlights, competitor comparison, PDF and CSV reports
 
@@ -16,4 +16,4 @@
 
 ## Contact
 
-- citecheck.app@gmail.com
+- rawview.app@gmail.com
